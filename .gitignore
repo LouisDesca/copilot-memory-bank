@@ -1,0 +1,8 @@
+# Ignore the Copilot Memory Bank context files
+memory-bank/
+
+# Other common ignores (optional, add as needed)
+node_modules/
+dist/
+.env
+.DS_Store
