@@ -1,0 +1,15 @@
+# .clinerules – Project Intelligence
+
+## Licensing
+
+- This project is a derivative/fork of a project licensed under the Apache License, Version 2.0 (Cline Memory Bank).
+- This repository itself is not re-licensed under Apache 2.0, but complies with the upstream license requirements.
+- LICENSE file is present in the root directory to provide the required license text for compliance.
+- NOTICE file is present in the root directory (empty, as no attributions are required).
+- No license header is applied to local files, as this repository is not asserting its own license.
+- All compliance steps are documented in the Memory Bank and tracked here for future reference.
+
+## Patterns
+
+- Always check for explicit licensing requirements and owner preferences before applying license headers to files.
+- Document all compliance and licensing actions in both the Memory Bank and .clinerules for future maintainers.

@@ -3,6 +3,10 @@
 ## What Works
 
 *   All core Memory Bank files are created and refined.
+*   LICENSE file with full Apache 2.0 license text is present in the root directory for compliance with the upstream license (this repo is not re-licensed).
+*   Empty NOTICE file is present in the root directory for compliance.
+*   `.clinerules` file is present in the root directory, tracking compliance and project intelligence.
+*   `memory-bank/projectbrief.md` foundational file is present and clarifies compliance-only status.
 *   `.github/copilot-instructions.md` provides detailed, Cline-inspired instructions and workflow summary for Copilot.
 *   The developer-focused `README.md` in the project root explains setup, usage, and best practices.
 *   The system is fully documented and ready for real-world use and testing.
@@ -14,8 +18,8 @@
 
 ## Current Status
 
-*   **Phase:** Documentation & System Setup Complete / Ready for Testing.
-*   The Memory Bank structure and all documentation are in place.
+*   **Phase:** Documentation, System Setup, and Apache 2.0 License Compliance (as a derivative/fork) Complete / Ready for Testing.
+*   The Memory Bank structure, all documentation, and compliance files are in place to fulfill the requirements of the upstream license.
 *   The next step is to test Copilot's context awareness and refine the system as needed.
 
 ## Known Issues
