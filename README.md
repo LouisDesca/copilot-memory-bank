@@ -123,6 +123,8 @@ Follow these practices during regular development:
 
 *   **Manual Context Update (`update memory bank`):** You can ask Copilot to "update memory bank". Per its instructions, it should then perform a thorough documentation pass, updating `activeContext.md` and `progress.md` based on its understanding of the current state. *Always verify Copilot's updates for accuracy.* This is useful before ending a long session.
 
+*   **Plan Mode (`#plan` requests):** When you start a request with "#plan", Copilot will enter plan-mode. In this mode, it reads necessary files to understand the context, then creates a detailed implementation plan without making actual changes. It will structure the plan with clear steps, file paths, and specific code changes needed. At the end, it will ask if you want to make adjustments or execute the plan. This is useful for complex changes that need careful planning.
+
 *   **Customization:** Feel free to add new files to `memory-bank/` for specific contexts (e.g., `api-specs.md`, `testing-strategy.md`) and update `.github/copilot-instructions.md` or your settings.json to reference them.
 
 *   **VS Code Settings.json Configuration:** 

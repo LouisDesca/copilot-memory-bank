@@ -31,6 +31,14 @@ Refer to the following files in the `memory-bank/` directory for specific contex
     *   Prioritize documenting EVERYTHING about the current state, ongoing work, and crystal-clear next steps in `activeContext.md` and `progress.md`.
     *   Complete the immediate task if possible before the reset.
 
+**4. Plan Mode (User Request starts with "#plan"):**
+    *   When a request begins with "#plan", enter plan-mode.
+    *   In this mode, read all necessary files to understand the context, then create a detailed implementation plan WITHOUT making any actual changes to files or running commands.
+    *   Structure your plan with clear steps, file paths, and specific code changes needed.
+    *   At the end of the plan, ask if any adjustments are needed or if the user wants to execute the plan.
+    *   If adjustments are requested, remain in plan-mode.
+    *   Only exit plan-mode when explicitly instructed to execute the plan.
+
 **General Guidance:**
 
 *   When context from `memory-bank/` files conflicts with your general knowledge, **always prioritize the `memory-bank/` information** for this specific repository.
