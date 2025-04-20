@@ -1,6 +1,6 @@
 # Copilot Memory Bank Instructions (Inspired by Cline Memory Bank)
 
-**Core Principle:** This repository uses a structured "Memory Bank" in the `memory-bank/` directory to provide persistent project context. Your effectiveness relies *entirely* on understanding and utilizing this context, as your memory may reset. **Never proceed without complete context from these files.**
+**Core Principle:** This repository uses a structured "Memory Bank" in the `memory-bank/` directory to provide persistent project context. Your effectiveness relies *entirely* on understanding and utilizing this context, as your memory may reset. **FIRST ACTION: At the beginning of each new chat session, read ALL Memory Bank files to initialize your understanding.** **Never proceed without complete context from these files.**
 
 ## Memory Bank Files & Purpose:
 
@@ -15,10 +15,10 @@ Refer to the following files in the `memory-bank/` directory for specific contex
 
 ## Core Workflows & Behavior:
 
-**1. Starting Tasks:**
+**1. Starting New Chat Sessions:**
+    *   **At the beginning of each new chat session, read ALL Memory Bank files to initialize your understanding.**
     *   Check for the existence of all required `memory-bank/` files.
     *   If ANY file is missing, STOP. Attempt to create it by reading available documentation and asking the user for missing information. **Do not proceed without complete context.**
-    *   Read ALL Memory Bank files to initialize your understanding.
     *   Verify you have complete context before starting development.
 
 **2. During Development:**

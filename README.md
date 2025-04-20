@@ -37,7 +37,7 @@ When you interact with Copilot Chat within this repository (in VS Code or on Git
     *   `systemPatterns.md`: Architecture, design decisions.
     *   `activeContext.md`: Current focus, recent changes, next steps (**Primary source of truth for current state**).
     *   `progress.md`: What works, what's left, status, issues.
-*   **`README.md` (This file):** Guide for human developers on setting up and using the system.
+*   **`README.md` (This file):** Guide for developers on setting up and using the system.
 
 ## 3. Getting Started
 
@@ -46,7 +46,11 @@ When you interact with Copilot Chat within this repository (in VS Code or on Git
 *   GitHub Copilot enabled (in VS Code or your environment).
 *   A Git repository.
 
-**Setup Steps:**
+**Setup Options:**
+
+You can implement the Memory Bank system in two ways:
+
+### Option 1: Repository-based Setup (Recommended for Teams)
 
 1.  **Ensure Core Components Exist:**
     *   Create a `.github/` directory in your project root if it doesn't exist.
@@ -54,12 +58,36 @@ When you interact with Copilot Chat within this repository (in VS Code or on Git
     *   Copy or create a `.github/copilot-instructions.md` file (refer to the example in this repository). Review it to ensure it correctly references the `memory-bank/` files and includes the core operational principles.
 2.  **Create/Verify Memory Bank Files:**
     *   Ensure all required context files exist within `memory-bank/` (see list in "How It Works").
-    *   If any file is missing, create it. Gather necessary information from existing project documentation, team members, or code analysis. **The presence and accuracy of these files are critical for Copilot's effectiveness.**
+    *   If any file is missing, ask Copilot to create them for you or create them yourself
+    *   **Note:** These files are for Copilot to reference, but it's your responsibility as a developer to create and maintain them. **The presence and accuracy of these files are critical for Copilot's effectiveness.**
 3.  **Populate Initial Context:**
     *   Fill each `memory-bank/` file with relevant, accurate information reflecting the project's starting state. Use any existing project brief or high-level documentation as a guide.
     *   Ensure `activeContext.md` clearly states the initial "Next Steps" (e.g., "Complete initial project setup").
     *   Ensure `progress.md` documents the starting point accurately.
 4.  **Confirmation:** Once all files are present and populated, the setup is complete. Copilot will start using this context automatically in subsequent interactions within the repository.
+
+### Option 2: Personal VS Code Settings (Settings.json)
+
+If you prefer not to store the Copilot instructions in the repository (for personal use or preference), you can use VS Code's settings.json:
+
+1. **Create Memory Bank Structure:**
+   * Follow steps 1-3 above to create and populate the Memory Bank files in your project.
+
+2. **Configure VS Code Settings:**
+   * Open VS Code settings (File > Preferences > Settings or press Ctrl+,)
+   * Click on the "Open Settings (JSON)" icon in the top-right corner
+   * Add the Memory Bank instructions to your settings.json (see example in [`memory-bank-settings.json`](./memory-bank-settings.json))
+
+3. **Benefits of this approach:**
+   * Keeps Copilot instructions as personal preferences rather than repository content
+   * Works across all repositories you have locally without needing to add files to each
+   * Can be synced across devices with VS Code Settings Sync
+
+4. **Considerations:**
+   * This approach is best for individual developers, as settings aren't shared with the team
+   * You'll still need the `memory-bank/` directory in your repositories
+
+**Note:** You can use both approaches simultaneously. If both exist, Copilot will combine the instructions from both sources.
 
 ## 4. Daily Workflow
 
@@ -94,7 +122,15 @@ Follow these practices during regular development:
 ## 6. Advanced Usage
 
 *   **Manual Context Update (`update memory bank`):** You can ask Copilot to "update memory bank". Per its instructions, it should then perform a thorough documentation pass, updating `activeContext.md` and `progress.md` based on its understanding of the current state. *Always verify Copilot's updates for accuracy.* This is useful before ending a long session.
-*   **Customization:** Feel free to add new files to `memory-bank/` for specific contexts (e.g., `api-specs.md`, `testing-strategy.md`) and update `.github/copilot-instructions.md` to reference them.
+
+*   **Customization:** Feel free to add new files to `memory-bank/` for specific contexts (e.g., `api-specs.md`, `testing-strategy.md`) and update `.github/copilot-instructions.md` or your settings.json to reference them.
+
+*   **VS Code Settings.json Configuration:** 
+    * To use the settings.json approach, you'll configure GitHub Copilot's custom instructions through the `github.copilot.chat.codeGeneration.instructions` setting.
+    * This can be set at the User level (applies to all workspaces) or Workspace level (specific to current project).
+    * You can define instruction text directly in settings.json or reference external files.
+    * See the [`memory-bank-settings.json`](./memory-bank-settings.json) example for implementation details.
+
 *   **Prompt Files (`*.prompt.md`):** Explore using VS Code's prompt file feature (requires enabling `"chat.promptFiles": true`) in `.github/prompts/` for reusable, context-rich prompts that reference Memory Bank files.
 
 ## 7. References
