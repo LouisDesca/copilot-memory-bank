@@ -8,18 +8,18 @@
 
 ## What's Left to Build
 
-1.  **`.github/copilot-instructions.md`**: This crucial file needs to be created and populated with instructions directing Copilot to use the `memory-bank/` context. Its effectiveness needs testing.
-2.  **Workflows & Documentation**: Clear guidelines on how to initialize, use, and maintain the Copilot Memory Bank system need to be written.
+1.  **Workflows & Documentation**: Clear guidelines on how to initialize, use, and maintain the Copilot Memory Bank system need to be written.
+2.  **Testing & Refinement**: The system needs to be tested in practice to see how well Copilot utilizes the provided context via `.github/copilot-instructions.md` and refine the instructions/structure as needed.
 3.  **Example Prompt Files (`*.prompt.md`)**: Creating examples to showcase task-specific context usage (Exploratory/Optional based on brief).
-4.  **Testing & Refinement**: The system needs to be tested in practice to see how well Copilot utilizes the provided context and refine the instructions/structure as needed.
 
 ## Current Status
 
-*   **Phase:** Initialization / Setup.
+*   **Phase:** Initial Setup Complete / Ready for Testing & Documentation.
 *   The basic file structure for the memory bank is in place.
-*   The next critical step is creating the `.github/copilot-instructions.md` file to link Copilot to this structure.
+*   The initial `.github/copilot-instructions.md` file has been created, linking Copilot to the `memory-bank/` structure.
+*   The next steps involve documenting workflows and testing the effectiveness of the instructions.
 
 ## Known Issues
 
-*   None identified yet, as the core integration (`copilot-instructions.md`) has not been implemented or tested.
-*   Potential limitations of `copilot-instructions.md` regarding length, complexity, and referencing external files are anticipated but not yet confirmed.
+*   The effectiveness of the current `.github/copilot-instructions.md` in guiding Copilot to use the `memory-bank/` context needs practical testing.
+*   Potential limitations of `copilot-instructions.md` (length, complexity, file referencing) still need to be evaluated through use.
