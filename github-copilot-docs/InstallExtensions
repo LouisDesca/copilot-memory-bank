@@ -1,0 +1,124 @@
+Extending Copilot Chat with the Model Context Protocol (MCP)
+
+Learn how to use the Model Context Protocol (MCP) to extend Copilot Chat.
+In this article
+
+    Overview
+    Prerequisites
+    Configuring MCP servers in Visual Studio Code
+    Using MCP servers in Copilot Chat
+    Using existing MCP configurations
+    Creating a new MCP server
+
+Note
+
+    MCP support is currently in public preview and subject to change.
+    MCP support is only available in Copilot Chat for Visual Studio Code.
+    The GitHub Pre-release License Terms apply to your use of this product.
+
+Overview
+
+The Model Context Protocol (MCP) is an open standard that defines how applications share context with large language models (LLMs). MCP provides a standardized way to connect AI models to different data sources and tools, enabling them to work together more effectively.
+
+You can use MCP to extend the capabilities of Copilot Chat by integrating it with a wide range of existing tools and services. For example, the GitHub MCP server allows you to use Copilot Chat in Visual Studio Code to perform tasks on GitHub. You can also use MCP to create new tools and services that work with Copilot Chat, allowing you to customize and enhance your experience.
+
+For more information on MCP, see the official MCP documentation.
+
+For information on some of the other currently available MCP servers, see the MCP servers repository.
+Prerequisites
+
+    Access to Copilot. For information about how to get access to Copilot, see What is GitHub Copilot?.
+    Visual Studio Code version 1.99 or later. For information on installing Visual Studio Code, see the Visual Studio Code download page.
+
+Configuring MCP servers in Visual Studio Code
+
+To configure MCP servers in Visual Studio Code, you need to set up a configuration script that specifies the details of the MCP servers you want to use. You can configure MCP servers for either:
+
+    A specific repository. This will share MCP servers with anyone who opens the project in Visual Studio Code. To do this, create a .vscode/mcp.json file in the root of your repository.
+
+    Your personal instance of Visual Studio Code. You will be the only person who has access to configured MCP servers. To do this, add the configuration to your settings.json file in Visual Studio Code.
+
+    Note
+
+    We recommend you use only one location per server. Adding the same server to both locations may cause conflicts and unexpected behavior.
+
+The steps below show how to configure the Fetch MCP server in your .vscode/mcp.json file. The Fetch MCP server is a simple MCP server that provides web content fetching capabilities. For more information on the Fetch MCP server, see the Fetch directory in the MCP Server repository.
+
+You can use the same steps to configure MCP servers in your personal Visual Studio Code settings. Details on how to configure other MCP servers are available in the MCP servers repository.
+
+    Add the following configuration to your .vscode/mcp.json file:
+    JSON
+
+{
+"inputs": [
+  // The "inputs" section defines the inputs required for the MCP server configuration. 
+  {
+    "type": "promptString"
+  }
+],
+"servers": {
+  // The "servers" section defines the MCP servers you want to use.
+  "fetch": {
+    "command": "uvx",
+    "args": ["mcp-server-fetch"]
+  }
+ }
+}
+
+Save the .vscode/mcp.json file.
+
+A "Start" button will appear in your .vscode/mcp.json file, at the top of the list of servers. Click the "Start" button to start the MCP servers. This will trigger the input dialog and discover the server tools, which are then stored for later sessions.
+
+Screenshot of MCP server configuration in Visual Studio Code. The "Start" button is outlined in dark orange.
+
+Open Copilot Chat by clicking the
+
+    icon in the title bar of Visual Studio Code.
+
+    In the Copilot Chat box, select Agent from the popup menu.
+
+    Screenshot of the Copilot Chat box in Visual Studio Code. The "Agent" option is outlined in dark orange.
+
+    To view your list of available MCP servers, click the tools icon in the top left corner of the chat box. This will open the MCP server list, where you can see all the MCP servers and associated tools that are currently available in your Visual Studio Code instance.
+
+For more information on configuring MCP servers in Visual Studio Code, see Use MCP servers in Visual Studio Code (Preview) in the Visual Studio Code documentation.
+
+Important
+
+Beginning April 4, 2025, the GitHub MCP server, and installation instructions, will be publicly available in the github-mcp-server repository.
+Using MCP servers in Copilot Chat
+
+Once you have configured your MCP servers, you can use them in Copilot Chat to access a wide range of tools and services. In the example below, we will use the Fetch MCP server to fetch details about a web page.
+
+    Open Copilot Chat by clicking the 
+
+    icon in the title bar of Visual Studio Code.
+
+    In the Copilot Chat box, select Agent from the popup menu.
+
+    In the file with the MCP configuration, check that the MCP server is running. If it is not running, click the "Start" button to start the MCP server.
+
+    Screenshot of the MCP server configuration in Visual Studio Code. The "Running" status is outlined in dark orange.
+
+    Ask Copilot Chat to fetch the details of a URL. For example:
+
+    Fetch https://github.com/github/docs.
+
+    If Copilot asks you to confirm that you want to proceed, click Continue.
+
+    Copilot will fetch the details of the URL and display them in the chat box.
+
+For more information on using MCP servers in Visual Studio Code, see Use MCP servers in Visual Studio Code (Preview) in the Visual Studio Code documentation.
+Using existing MCP configurations
+
+If you already have an MCP configuration in Claude Desktop, you can use that configuration in Visual Studio Code to access the same MCP servers. To do this, add the following configuration to your settings.json file in Visual Studio Code:
+JSON
+
+"chat.mcp.discovery.enabled": true
+
+Visual Studio Code will automatically find your existing configuration and use it in your Visual Studio Code instance.
+Creating a new MCP server
+
+You can create a new MCP server to fulfill your specific needs, and then integrate it with Copilot Chat. For example, you can create an MCP server that connects to a database or a web service, and then use that server in Copilot Chat to perform tasks on that database or web service.
+
+For more information on creating and configuring your own MCP servers, see the official MCP documentation.

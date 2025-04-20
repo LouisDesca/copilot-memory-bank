@@ -1,0 +1,54 @@
+Adding personal custom instructions for GitHub Copilot
+
+Customize GitHub Copilot Chat responses to match your personal preferences.
+In this article
+
+    About personal custom instructions for GitHub Copilot Chat
+    Adding personal custom instructions
+
+Note
+
+Personal custom instructions are currently only supported for GitHub Copilot Chat in GitHub.
+
+For an overview of the methods you can use to customize GitHub Copilot Chat responses, see About customizing GitHub Copilot Chat responses.
+About personal custom instructions for GitHub Copilot Chat
+
+You can add custom instructions for GitHub Copilot Chat in order to receive chat responses that are customized to your personal preferences, across your conversations on the GitHub website. For example, you can choose to always have Copilot Chat respond in a preferred language or with a particular style. Some examples of instructions you could add are:
+
+    Always respond in Spanish.
+    Your style is a helpful colleague, minimize explanations but provide enough context to understand the code.
+    Always provide examples in TypeScript.
+
+Note
+
+    It is possible for multiple types of custom instructions to apply to a conversation. Personal instructions take the highest priority, followed by repository instructions, with organization instructions prioritized last. However, all sets of relevant instructions are still combined and provided to Copilot Chat.
+    Whenever possible, you should avoid providing conflicting sets of instructions. If you are concerned about response quality, you can also choose to temporarily disable repository instructions. See Adding repository custom instructions for GitHub Copilot.
+
+Adding personal custom instructions
+
+You can add personal custom instructions either in the Chat panel or in immersive mode. The same instructions will be applied in both modes.
+
+    In the top right of any page on GitHub, either:
+        Click the 
+
+icon to open the Copilot Chat panel.
+Click
+next to the
+
+    icon, then click Immersive to open Copilot Chat in the full-page, immersive mode. You can also go directly to https://github.com/copilot.
+
+Select the
+
+dropdown menu at the top right of the Chat panel, or immersive page, then click Personal instructions.
+
+Add natural language instructions to the text box.
+
+You can write your instructions in any format you prefer. For example, you can write them as a single block of text, each on a new line, or separated by blank lines.
+
+Optionally, click
+
+    to view templates you can use for common instructions. If you click on one of the boxes, such as "Communication", instructions will be added to the text box with placeholders, such as {format} that you can replace with your preferences.
+
+    Click Save. Your instructions are now active, and will stay active until you change or remove them.
+
+To see your instructions in action, go to https://github.com/copilot and start a conversation.
